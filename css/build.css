@@ -1,0 +1,47 @@
+:root{
+    --bg-color-100: #232f3e;
+    --bg-color-200: #37475a;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bg-primario{
+    background-color: var(--bg-color-100);
+}
+.container-main{
+    max-width: 720px;    
+    background-color: var(--bg-color-200);
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-header > a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.bt-nav {
+    border: 0.1rem solid white;
+    border-radius: 0.2rem;
+    margin: 0.5rem;
+}
+
+
+
+@media screen and (min-width: 768px){
+    body{
+        background-color: red;
+    }
+    
+    
+}
