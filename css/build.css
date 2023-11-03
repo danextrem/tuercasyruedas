@@ -1,47 +1,40 @@
-:root{
-    --bg-color-100: #232f3e;
-    --bg-color-200: #37475a;
+:root {
+    --bg-primario: #00bbf9;
 }
 
 body{
     font-family: Arial, sans-serif;
-    margin: 0;
-    box-sizing: border-box;
+    margin: 0;    
 }
 
-.bg-primario{
-    background-color: var(--bg-color-100);
+.bg-primario {
+    background-color: var(--bg-primario);
 }
-.container-main{
-    max-width: 720px;    
-    background-color: var(--bg-color-200);
+
+.content-principal > div {
     margin-left: auto;
-    margin-right: auto;
-}
-.nav-header {
+    margin-right: auto;    
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.nav-header > a{
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-.bt-nav {
-    border: 0.1rem solid white;
-    border-radius: 0.2rem;
-    margin: 0.5rem;
-}
-
-
-
-@media screen and (min-width: 768px){
-    body{
-        background-color: red;
-    }
+    max-width: 540px;          
     
-    
+}
+
+.content-principal > div > a, div > nav > a {
+    text-decoration: none;    
+}
+
+
+
+
+/*Media Queris*/
+@media screen and (min-width: 576px){
+}
+
+@media screen and (min-width: 992px){   
+}
+
+
+@media screen and (min-width: 1400px){    
 }
