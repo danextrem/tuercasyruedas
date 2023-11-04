@@ -3,58 +3,79 @@
     --text-primario: white;
 }
 
-body{
+ul, li, a {
+    text-decoration: none;    
+    color: var(--text-primario);
+}
+
+body, h1 {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.bg-primario {
-    background-color: var(--bg-primario);    
+.wrapper {
+    background-color: var(--bg-primario);
 }
 
-.content-principal {
-    margin-left: auto;
-    margin-right: auto;   
-    max-width: 100%;
+.wrapper > header {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between; 
+    align-items: center;
+}
+.list-menu {
+    display: none;    
 }
 
-.content-principal > nav {
-    position: absolute;
-    background-color: red;
-    display: flex;
+.list-menu > nav {
+    display: flex;    
     flex-direction: column;
-    right: 0;    
+    align-items: end;
 }
 
-.content-principal a, nav > a{
-    text-decoration: none;        
+.list-menu:target {
+    position: absolute;
+    display: flex;   
+    flex-direction: column; 
+    align-items: end;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;  
+    background-color:rgb(75, 75, 75);    
 }
 
 
-/*Media Queris*/
-@media screen and (min-width: 576px){
-    .content-principal {
-        position: relative;
-        display: flex;
-        max-width: 720px;
-        background-color: blue;
-        align-items: center;
+@media screen and (min-width: 768px){ 
+    .wrapper > header {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 720px;        
     }
 
-    .content-principal > nav {
-        position: relative;
-        background-color: violet;
+    .close-menu, .open-menu {
+        display: none;
+    }
+
+    .list-menu, .list-menu:target {
         display: flex;
-        align-items: center;
-        flex-direction: initial;
-        right: initial;
-        gap: 1rem;
+        position: relative;
+        background-color: unset;
+        top: unset;
+        width: unset; 
+        height: unset;
+        
+    }
+
+    .list-menu > nav {
+        display: flex;    
+        flex-direction: unset;   
+        gap: 1rem;     
     }
 
     
-    
+
 }
 
 @media screen and (min-width: 992px){   
