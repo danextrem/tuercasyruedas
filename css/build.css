@@ -1,11 +1,12 @@
 :root {
-    --bg-primario: #00bbf9;
-    --text-primario: white;
+    --bg-primario: #212529;
+    --bg-segundario:white;
+    
 }
 
 ul, li, a {
     text-decoration: none;    
-    color: var(--text-primario);
+    color: var(--bg-segundario);
 }
 
 body, h1 {
@@ -17,21 +18,26 @@ body, h1 {
 
 .wrapper {
     background-color: var(--bg-primario);
+    border-bottom: 0.15rem solid #e1e1e1;
+    box-shadow: -1px 1px 11px 5px rgb(218 218 218 / 30%)
+    
 }
 
 .wrapper > header {
     display: flex;
     justify-content: space-between; 
-    align-items: center;
+    align-items: center;    
+    height: 72px;        
 }
 .list-menu {
-    display: none;    
+    display: none;
 }
 
-.list-menu > nav {
+.list-menu > nav, nav > a {
     display: flex;    
     flex-direction: column;
     align-items: end;
+    color: var(--bg-segundario);
 }
 
 .list-menu:target {
@@ -42,8 +48,8 @@ body, h1 {
     top: 0;
     right: 0;
     left: 0;
-    bottom: 0;  
-    background-color:rgb(75, 75, 75);    
+    bottom: 0; 
+    background-color: var(--bg-primario) ;
 }
 
 
@@ -68,9 +74,10 @@ body, h1 {
         
     }
 
-    .list-menu > nav {
+    .list-menu > nav, nav > a {
         display: flex;    
         flex-direction: unset;   
+        color: var(--bg-segundario);
         gap: 1rem;     
     }
 
