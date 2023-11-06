@@ -1,15 +1,17 @@
 :root {
-    --bg-primario: #212529;
-    --bg-segundario:white;
+    --bg-primario: #EBEBEB;
+    --bg-segundario: #323436;
+    --texto-primario:#2B2E41;
+    --texto-segundario:#EBEBEB;
     
 }
 
 ul, li, a {
     text-decoration: none;    
-    color: var(--bg-segundario);
+    color: var(--texto-primario);
 }
 
-body, h1 {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -18,71 +20,39 @@ body, h1 {
 
 .wrapper {
     background-color: var(--bg-primario);
-    border-bottom: 0.15rem solid #e1e1e1;
-    box-shadow: -1px 1px 11px 5px rgb(218 218 218 / 30%)
-    
 }
 
 .wrapper > header {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;    
-    height: 72px;        
-}
-.list-menu {
-    display: none;
+    align-items: center;
+    justify-content: space-between;    
 }
 
-.list-menu > nav, nav > a {
-    display: flex;    
-    flex-direction: column;
-    align-items: end;
-    color: var(--bg-segundario);
+.wrapper > header > a > img{
+    margin: 0.5rem;
 }
 
-.list-menu:target {
-    position: absolute;
-    display: flex;   
-    flex-direction: column; 
-    align-items: end;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0; 
-    background-color: var(--bg-primario) ;
+.btn-destacado {
+    background: #ff711b;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: white;
 }
 
 
-@media screen and (min-width: 768px){ 
-    .wrapper > header {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 720px;        
-    }
 
-    .close-menu, .open-menu {
-        display: none;
-    }
+.wrapper > header > nav{
+    display: flex;
+    gap: 2rem;
+}
 
-    .list-menu, .list-menu:target {
-        display: flex;
-        position: relative;
-        background-color: unset;
-        top: unset;
-        width: unset; 
-        height: unset;
-        
-    }
 
-    .list-menu > nav, nav > a {
-        display: flex;    
-        flex-direction: unset;   
-        color: var(--bg-segundario);
-        gap: 1rem;     
-    }
 
-    
 
+
+@media screen and (min-width: 768px){     
 }
 
 @media screen and (min-width: 992px){   
