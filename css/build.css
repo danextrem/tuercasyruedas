@@ -1,8 +1,9 @@
 :root {
     --bg-primario: #EBEBEB;
     --bg-segundario: #323436;
+    --bg-destacado: #ff711b;
     --texto-primario:#2B2E41;
-    --texto-segundario:#EBEBEB;
+    --texto-segundario: white;
     
 }
 
@@ -33,12 +34,12 @@ body {
 }
 
 .btn-destacado {
-    background: #ff711b;
-    display: flex;
+    background-color: var(--bg-destacado);    
     align-items: center;
     border-radius: 0.5rem;
     padding: 1rem;
-    color: white;
+    color: var(--texto-segundario);
+    display: none;
 }
 
 
@@ -52,7 +53,15 @@ body {
 
 
 
-@media screen and (min-width: 768px){     
+@media screen and (min-width: 768px){ 
+    .btn-destacado {
+        background-color: var(--bg-destacado);
+        display: flex;
+        align-items: center;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        color: var(--texto-segundario);        
+    }    
 }
 
 @media screen and (min-width: 992px){   
