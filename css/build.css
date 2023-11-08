@@ -1,5 +1,5 @@
 :root {
-    --bg-header: #E0E0E0;
+    --bg-header: #e9ecef;
     --bg-primario: #2B2E41;
     --bg-segundario: #ff711b;
     --bg-destacado: #0d6efd;
@@ -9,7 +9,7 @@
 
 ul, li, a {
     text-decoration: none;    
-    color: var(--texto-segundario);
+    color: var(--texto-primario);
 }
 
 body {
@@ -23,7 +23,7 @@ body {
     background-color: var(--bg-header);
     height: 60px;
     border-bottom:var(--bg-segundario) solid 2px;
-    box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 20%);
+    /*box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 20%);*/
 }
 
 .header-principal {
@@ -42,30 +42,32 @@ body {
 }
 
 .btn-destacado {       
-    background-color: var(--bg-destacado);        
+    background-color: var(--bg-primario);        
     border-radius: 0.5rem;    
     color: var(--texto-segundario);
     margin: 0 1rem;
     font-weight: bold;
+    width: 240px;
 }
 
 .desplega-menu {            
     position: absolute;
-    top: 62px;
+    top: 60px;
     right: 0; 
-    width: 100%;
-    height: 0;
+    width: 300px;
+    height: calc(100vh - 62px); 
     overflow: hidden;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
     text-align: center;        
-    background-color: var(--texto-primario);
-    transition: all .5s;    
+    background-color: var(--bg-header);
+    transition: all .5s;        
+    border-left: var(--bg-segundario) 2px solid;    
 }
 
-.open-menu:checked + .desplega-menu{  
-    height: calc(100vh - 62px);      
+.open-menu:checked + .desplega-menu{      
+    width: 0;     
 }
 
 .desplega-menu > a {     
@@ -107,24 +109,26 @@ body {
         top: unset;
         width: unset;        
         height: unset;
-        flex-direction: unset;
-        background-color: unset;
+        flex-direction: unset;        
+        border-radius: none;   
+        border-left: none;     
     }
 
     .open-menu:checked + .desplega-menu{  
-        height: unset;      
+        width: unset;      
     }
 
     .btn-destacado {       
-        background-color: var(--bg-destacado);
-        border-radius: 0.5rem;       
-        color: white!important;
+        background-color: var(--bg-primario); 
+        padding: 0;
+        margin: 0;
+        
     }
 
     .desplega-menu > a {     
         padding: 0.6rem 1rem;
         font-size: 1em; 
-        color: var(--texto-primario);
+        
         cursor: pointer;        
     }
    
