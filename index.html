@@ -2,40 +2,127 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra y Venta de autos y motos | Autos y Tuercas</title>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <meta name="description"
-        content="Encuentra la mejor selección de autos nuevos y usados en nuestro portal de compra y venta de autos. Explora opciones, compara precios y haz realidad tu sueño de tener el auto perfecto. ¡Descubre oportunidades únicas en nuestra plataforma de confianza!">
-    <link rel="stylesheet" href="css/build.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra y Venta de autos y motos | Autos y Tuercas</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <meta name="description"
+    content="Encuentra la mejor selección de autos nuevos y usados en nuestro portal de compra y venta de autos. Explora opciones, compara precios y haz realidad tu sueño de tener el auto perfecto. ¡Descubre oportunidades únicas en nuestra plataforma de confianza!">
+  <link rel="stylesheet" href="css/build.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="header-principal">
-            <a href="/"><img src="assets/autosytuercas.svg" alt="Autos y Tuercas"></a>
-            <label for="open-menu">
-                <img src="assets/icons/list.svg" alt="open">
-            </label>            
-            <input type="checkbox" id="open-menu" class="open-menu">
-            <nav class="desplega-menu">                
-                <a href="/" class="btn-destacado">Vende tu vehículo </a>
-                <a href="/">Noticias</a>
-                <a href="/">Registrate</a>                
-            </nav>
-        </header>
-    </div>
-    
-    
+  <div class="wrapper">
+    <header class="header-principal">
+      <a href="/"><img src="assets/autosytuercas.svg" alt="Autos y Tuercas"></a>
+      <label for="open-menu">
+        <img src="assets/icons/list.svg" alt="open">
+      </label>
+      <input type="checkbox" id="open-menu" class="open-menu">
+      <nav class="desplega-menu">
+        <a href="/" class="btn-destacado">Vende tu vehículo </a>
+        <a href="/">Noticias</a>
+        <a href="/">Registrate</a>
+      </nav>
+    </header>
+  </div>
 
 
-    <main class="main">
-        <section></section>
-    </main>
-    <figure>
-        
-    </figure>
+  <section class="search-container">    
+    <select name="categoria" id="categoria">
+      <option value="">Categoría</option>
+    </select>
+    <br><br>
+
+    <select name="marca" id="marca">
+      <option value="" selected>Marca</option>
+    </select>
+  </section>
+
+
+  <figure>
+
+  </figure>
+  <script>
+    let selectVehiculo =
+
+    {
+      "carroceria": [
+        {
+          "key": "camioneta-suv",
+          "value": "Camioneta SUV"
+        },
+        {
+          "key": "sedan",
+          "value": "Sedán"
+        }
+      ],
+      "marca": [
+        {
+          "key": "toyota",
+          "value": "Toyota",
+          "carroceria": ["camioneta-suv", "sedan"]
+        },
+        {
+          "key": "nissan",
+          "value": "Nissan",
+          "carroceria": ["sedan"]
+        }
+      ],
+      "modelo": [
+        {
+          "key": "x-trail",
+          "value": "X-Trail",
+          "marca": ["toyota"]
+        }
+      ]
+    };
+
+    window.onload = async function () {
+          var categoria = document.getElementById("categoria");
+          var marca = document.getElementById("marca");
+          categoria.innerHTML = '<option value="" selected>Categoría</option>';
+          
+          for (var x in selectVehiculo.carroceria) {
+            console.log("Carroceria " + selectVehiculo.carroceria[x].key);
+            categoria.options[categoria.options.length] = new Option(selectVehiculo.carroceria[x].value, selectVehiculo.carroceria[x].key);
+          }
+
+          categoria.onchange = function () {    
+            
+              console.log("Carrocerias " + categoria.value);
+            
+
+            marca.innerHTML = '<option value="" selected>Marca</option>';      
+            for (var x in selectVehiculo.marca) {  
+              console.log("Carroceriass " + selectVehiculo.marca[x].carroceria);
+
+
+
+              const fruits = ["Banana", "Orange", "Apple", "Mango"];
+              fruits.includes("Mango");
+
+              
+
+              if (selectVehiculo.marca[x].carroceria.includes(categoria.value)){
+                console.log("Marca " + selectVehiculo.marca[x].key);
+                marca.options[marca.options.length] = new Option(selectVehiculo.marca[x].value, selectVehiculo.marca[x].key);
+              }           
+          }
+
+            
+          }
+
+      
+
+
+    };
+
+
+
+  </script>
+
+
 </body>
 
 </html>

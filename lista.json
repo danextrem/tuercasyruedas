@@ -1,0 +1,26 @@
+{
+    "carroceria": [
+      {
+        "key": "camioneta-suv",
+        "value": "Camioneta SUV"
+      },
+      {
+        "key": "sedan",
+        "value": "Sedán"
+      }
+    ],
+    "marca": [
+      {
+        "key": "toyota",
+        "value": "Toyota",
+        "carroceria": ["camioneta-suv", "sedan"]
+      }
+    ],
+    "modelo": [
+      {
+        "key": "x-trail",
+        "value": "X-Trail",
+        "marca": ["toyota"]
+      }
+    ]
+  }
