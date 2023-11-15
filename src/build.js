@@ -1,59 +1,65 @@
-// getting all required elements
-const searchWrapper = document.querySelector(".search-input");
-const inputBox = searchWrapper.querySelector("input");
-const suggBox = searchWrapper.querySelector(".autocom-box");
-const icon = searchWrapper.querySelector(".icon");
-let linkTag = searchWrapper.querySelector("a");
-let webLink;
+const dataVehiculos = {
+    "carroceria": [
+        { "key": "camioneta-suv", "value": "Camioneta SUV" },
+        { "key": "sedan", "value": "Sedán" }
+    ],
+    "marca": [
+        { "key": "toyota", "value": "Toyota", "carroceria": ["camioneta-suv", "sedan"] },
+        { "key": "nissan", "value": "Nissan", "carroceria": ["camioneta-suv", "sedan"] }
+    ],
+    "modelo": [
+        { "key": "x-trail", "value": "X-Trail", "marca": ["nissan"], "carroceria": ["camioneta-suv"] }
+    ]
+};
 
-// if user press any key and release
-inputBox.onkeyup = (e)=>{
-    let userData = e.target.value; //user enetered data
-    let emptyArray = [];
-    if(userData){
-        icon.onclick = ()=>{
-            webLink = `https://www.google.com/search?q=${userData}`;
-            linkTag.setAttribute("href", webLink);
-            linkTag.click();
-        }
-        emptyArray = suggestions.filter((data)=>{
-            //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
-            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-        });
-        emptyArray = emptyArray.map((data)=>{
-            // passing return data inside li tag
-            return data = `<li>${data}</li>`;
-        });
-        searchWrapper.classList.add("active"); //show autocomplete box
-        showSuggestions(emptyArray);
-        let allList = suggBox.querySelectorAll("li");
-        for (let i = 0; i < allList.length; i++) {
-            //adding onclick attribute in all li tag
-            allList[i].setAttribute("onclick", "select(this)");
-        }
-    }else{
-        searchWrapper.classList.remove("active"); //hide autocomplete box
-    }
+window.onload = async function () {
+    const categoriaHtml = document.getElementById("categoria");
+    const marcaHtml = document.getElementById("marca");
+    const modeloHtml = document.getElementById("modelo");
+
+    fillDropDownOptions(dataVehiculos.carroceria, categoriaHtml);
+    fillDropDownOptions(dataVehiculos.marca, marcaHtml);
+    fillDropDownOptions(dataVehiculos.modelo, modeloHtml);
+};
+
+function fillDropDownOptions(optionsData, dropDownElement) {
+    optionsData.forEach(option => {
+        dropDownElement.options[dropDownElement.options.length] = new Option(option.value, option.key);
+    });
 }
 
-function select(element){
-    let selectData = element.textContent;
-    inputBox.value = selectData;
-    icon.onclick = ()=>{
-        webLink = `https://www.google.com/search?q=${selectData}`;
-        linkTag.setAttribute("href", webLink);
-        linkTag.click();
-    }
-    searchWrapper.classList.remove("active");
-}
 
-function showSuggestions(list){
-    let listData;
-    if(!list.length){
-        userValue = inputBox.value;
-        listData = `<li>${userValue}</li>`;
-    }else{
-      listData = list.join('');
+
+
+
+/*window.onload = async function () {
+  var categoriaHtml = document.getElementById("categoria");
+  var marcaHtml = document.getElementById("marca");
+  categoriaHtml.innerHTML = '<option value="" selected>Categoría</option>';
+  var modeloHtml = document.getElementById("modelo");
+  for (var x in selectVehiculo.carroceria) {
+    console.log("Carroceria " + selectVehiculo.carroceria[x].key);
+    categoriaHtml.options[categoriaHtml.options.length] = new Option(selectVehiculo.carroceria[x].value, selectVehiculo.carroceria[x].key);
+  }
+
+  categoriaHtml.onchange = function () {
+    console.log("Carrocerias " + categoriaHtml.value);
+    marcaHtml.innerHTML = '<option value="" selected>Marca</option>';
+    for (var x in selectVehiculo.marca) {
+      console.log("Carroceriass " + selectVehiculo.marca[x].carroceria);
+      if (selectVehiculo.marca[x].carroceria.includes(categoriaHtml.value)) {
+        console.log("Marca " + selectVehiculo.marca[x].key);
+        marcaHtml.options[marcaHtml.options.length] = new Option(selectVehiculo.marca[x].value, selectVehiculo.marca[x].key);
+      }
     }
-    suggBox.innerHTML = listData;
-}
+  }
+
+  marcaHtml.onchange = function () {
+    modeloHtml.innerHTML = '<option value="" selected>Modelo</option>';
+    for (var x in selectVehiculo.modelo) {
+      if (selectVehiculo.modelo[x].marca.includes(marcaHtml.value) && selectVehiculo.modelo[x].carroceria.includes(categoriaHtml.value)) {
+        modeloHtml.options[modeloHtml.options.length] = new Option(selectVehiculo.modelo[x].value, selectVehiculo.modelo[x].key);
+      }
+    }
+  }
+};*/

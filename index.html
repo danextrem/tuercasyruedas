@@ -28,14 +28,20 @@
   </div>
 
 
-  <section class="search-container">    
-    <select name="categoria" id="categoria">
+  <section class="search-container">  
+    <label for="categoria">Categoría:</label>
+    <select name="categoria" id="categoria" style="padding: 1rem;">
       <option value="">Categoría</option>
     </select>
-    <br><br>
 
-    <select name="marca" id="marca">
+    <label for="marca">Marca:</label>
+    <select name="marca" id="marca" style="padding: 1rem;">
       <option value="" selected>Marca</option>
+    </select>
+
+    <label for="modelo">Modelo:</label>
+    <select name="modelo" id="modelo" style="padding: 1rem;">
+      <option value="" selected>Modelo</option>
     </select>
   </section>
 
@@ -43,9 +49,10 @@
   <figure>
 
   </figure>
+  
+  <script type="text/javascript" src="src/build.js" async ></script>
   <script>
-    let selectVehiculo =
-
+    /*let selectVehiculo = 
     {
       "carroceria": [
         {
@@ -66,57 +73,55 @@
         {
           "key": "nissan",
           "value": "Nissan",
-          "carroceria": ["sedan"]
+          "carroceria": ["camioneta-suv", "sedan"]
         }
       ],
       "modelo": [
         {
           "key": "x-trail",
           "value": "X-Trail",
-          "marca": ["toyota"]
+          "marca": ["nissan"],
+          "carroceria": ["camioneta-suv"]
         }
       ]
-    };
+    };*/
 
-    window.onload = async function () {
-          var categoria = document.getElementById("categoria");
-          var marca = document.getElementById("marca");
-          categoria.innerHTML = '<option value="" selected>Categoría</option>';
-          
-          for (var x in selectVehiculo.carroceria) {
-            console.log("Carroceria " + selectVehiculo.carroceria[x].key);
-            categoria.options[categoria.options.length] = new Option(selectVehiculo.carroceria[x].value, selectVehiculo.carroceria[x].key);
+
+    
+
+
+
+      /*window.onload = async function () {
+        var categoriaHtml = document.getElementById("categoria");
+        var marcaHtml = document.getElementById("marca");
+        categoriaHtml.innerHTML = '<option value="" selected>Categoría</option>';
+        var modeloHtml = document.getElementById("modelo");
+        for (var x in selectVehiculo.carroceria) {
+          console.log("Carroceria " + selectVehiculo.carroceria[x].key);
+          categoriaHtml.options[categoriaHtml.options.length] = new Option(selectVehiculo.carroceria[x].value, selectVehiculo.carroceria[x].key);
+        }
+
+        categoriaHtml.onchange = function () {
+          console.log("Carrocerias " + categoriaHtml.value);
+          marcaHtml.innerHTML = '<option value="" selected>Marca</option>';
+          for (var x in selectVehiculo.marca) {
+            console.log("Carroceriass " + selectVehiculo.marca[x].carroceria);
+            if (selectVehiculo.marca[x].carroceria.includes(categoriaHtml.value)) {
+              console.log("Marca " + selectVehiculo.marca[x].key);
+              marcaHtml.options[marcaHtml.options.length] = new Option(selectVehiculo.marca[x].value, selectVehiculo.marca[x].key);
+            }
           }
+        }
 
-          categoria.onchange = function () {    
-            
-              console.log("Carrocerias " + categoria.value);
-            
-
-            marca.innerHTML = '<option value="" selected>Marca</option>';      
-            for (var x in selectVehiculo.marca) {  
-              console.log("Carroceriass " + selectVehiculo.marca[x].carroceria);
-
-
-
-              const fruits = ["Banana", "Orange", "Apple", "Mango"];
-              fruits.includes("Mango");
-
-              
-
-              if (selectVehiculo.marca[x].carroceria.includes(categoria.value)){
-                console.log("Marca " + selectVehiculo.marca[x].key);
-                marca.options[marca.options.length] = new Option(selectVehiculo.marca[x].value, selectVehiculo.marca[x].key);
-              }           
+        marcaHtml.onchange = function () {
+          modeloHtml.innerHTML = '<option value="" selected>Modelo</option>';
+          for (var x in selectVehiculo.modelo) {
+            if (selectVehiculo.modelo[x].marca.includes(marcaHtml.value) && selectVehiculo.modelo[x].carroceria.includes(categoriaHtml.value)) {
+              modeloHtml.options[modeloHtml.options.length] = new Option(selectVehiculo.modelo[x].value, selectVehiculo.modelo[x].key);
+            }
           }
-
-            
-          }
-
-      
-
-
-    };
+        }
+      };*/
 
 
 
