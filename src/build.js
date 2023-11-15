@@ -1,65 +1,128 @@
-const dataVehiculos = {
-    "carroceria": [
-        { "key": "camioneta-suv", "value": "Camioneta SUV" },
-        { "key": "sedan", "value": "Sedán" }
+const dataVehiculos = 
+{
+    "categoria": [
+      {
+        "key": "camioneta-suv",
+        "value": "Camioneta SUV"
+      },
+      {
+        "key": "sedan",
+        "value": "Sedán"
+      },
+      {
+        "key": "hatchback",
+        "value": "Hatchback"
+      }
     ],
     "marca": [
-        { "key": "toyota", "value": "Toyota", "carroceria": ["camioneta-suv", "sedan"] },
-        { "key": "nissan", "value": "Nissan", "carroceria": ["camioneta-suv", "sedan"] }
+      {
+        "key": "toyota",
+        "value": "Toyota",
+        "categoria": [
+          "camioneta-suv",
+          "sedan",
+          "hatchback"
+        ]
+      },
+      {
+        "key": "nissan",
+        "value": "Nissan",
+        "categoria": [
+          "camioneta-suv",
+          "sedan"
+        ]
+      }
     ],
     "modelo": [
-        { "key": "x-trail", "value": "X-Trail", "marca": ["nissan"], "carroceria": ["camioneta-suv"] }
+      {
+        "key": "yaris-hb",
+        "value": "Yaris Hatchback",
+        "marca": [
+          "toyota"
+        ],
+        "categoria": [
+          "hatchback"
+        ]
+      },
+      {
+        "key": "x-trail",
+        "value": "X-Trail",
+        "marca": [
+          "nissan"
+        ],
+        "categoria": [
+          "camioneta-suv"
+        ]
+      }
     ]
-};
+  };
 
+  
+/**
+ * Codigo para manejar los Select, principal de busqueda de Vehiculo
+ */  
 window.onload = async function () {
     const categoriaHtml = document.getElementById("categoria");
     const marcaHtml = document.getElementById("marca");
     const modeloHtml = document.getElementById("modelo");
 
-    fillDropDownOptions(dataVehiculos.carroceria, categoriaHtml);
+    fillDropDownOptions(dataVehiculos.categoria, categoriaHtml);
     fillDropDownOptions(dataVehiculos.marca, marcaHtml);
     fillDropDownOptions(dataVehiculos.modelo, modeloHtml);
+
+/**
+ * Fragmento de codigo select Categoria
+ */    
+    categoriaHtml.addEventListener('change', async (event) => {
+        const selectedCategoria = categoriaHtml.value;
+
+        if (selectedCategoria === "") {
+            clearDropDownOptions(marcaHtml, "Marca");
+            clearDropDownOptions(modeloHtml, "Modelo");
+            fillDropDownOptions(dataVehiculos.marca, marcaHtml);
+            fillDropDownOptions(dataVehiculos.modelo, modeloHtml);
+        } else {            
+            clearDropDownOptions(marcaHtml, "Marca");
+            clearDropDownOptions(modeloHtml, "Modelo");
+            const filteredMarcas = dataVehiculos.marca.filter(marca => marca.categoria.includes(selectedCategoria));
+            for (const { key, value } of filteredMarcas) {
+                marcaHtml.options[marcaHtml.options.length] = new Option(value, key);
+            }
+        }
+    });
+/**
+ * Fragmento de codigo select Marca
+ */    
+    marcaHtml.addEventListener('change', async (event) => {
+        const selectedMarca = marcaHtml.value;
+        const selectedCategoria = categoriaHtml.value;
+        let filteredMarcas = "";
+
+        if (selectedMarca === "") {
+            clearDropDownOptions(modeloHtml, "Modelo");            
+            fillDropDownOptions(dataVehiculos.modelo, modeloHtml);
+        } else {            
+            clearDropDownOptions(modeloHtml, "Modelo");
+            if (selectedCategoria === "") {                
+                filteredMarcas = dataVehiculos.modelo.filter(modelo => modelo.marca.includes(selectedMarca));
+            } else {                
+                filteredMarcas = dataVehiculos.modelo.filter(
+                    modelo => modelo.marca.includes(selectedMarca) && modelo.categoria.includes(selectedCategoria));
+            }            
+            for (const { key, value } of filteredMarcas) {
+                modeloHtml.options[modeloHtml.options.length] = new Option(value, key);
+            }
+        }
+    });
 };
 
 function fillDropDownOptions(optionsData, dropDownElement) {
-    optionsData.forEach(option => {
-        dropDownElement.options[dropDownElement.options.length] = new Option(option.value, option.key);
+    optionsData.forEach(({ key, value }) => {
+        dropDownElement.options[dropDownElement.options.length] = new Option(value, key);
     });
 }
 
+function clearDropDownOptions(dropDownElement, name) {
+    dropDownElement.innerHTML = '<option value="" selected>'+ name +'</option>';
+}
 
-
-
-
-/*window.onload = async function () {
-  var categoriaHtml = document.getElementById("categoria");
-  var marcaHtml = document.getElementById("marca");
-  categoriaHtml.innerHTML = '<option value="" selected>Categoría</option>';
-  var modeloHtml = document.getElementById("modelo");
-  for (var x in selectVehiculo.carroceria) {
-    console.log("Carroceria " + selectVehiculo.carroceria[x].key);
-    categoriaHtml.options[categoriaHtml.options.length] = new Option(selectVehiculo.carroceria[x].value, selectVehiculo.carroceria[x].key);
-  }
-
-  categoriaHtml.onchange = function () {
-    console.log("Carrocerias " + categoriaHtml.value);
-    marcaHtml.innerHTML = '<option value="" selected>Marca</option>';
-    for (var x in selectVehiculo.marca) {
-      console.log("Carroceriass " + selectVehiculo.marca[x].carroceria);
-      if (selectVehiculo.marca[x].carroceria.includes(categoriaHtml.value)) {
-        console.log("Marca " + selectVehiculo.marca[x].key);
-        marcaHtml.options[marcaHtml.options.length] = new Option(selectVehiculo.marca[x].value, selectVehiculo.marca[x].key);
-      }
-    }
-  }
-
-  marcaHtml.onchange = function () {
-    modeloHtml.innerHTML = '<option value="" selected>Modelo</option>';
-    for (var x in selectVehiculo.modelo) {
-      if (selectVehiculo.modelo[x].marca.includes(marcaHtml.value) && selectVehiculo.modelo[x].carroceria.includes(categoriaHtml.value)) {
-        modeloHtml.options[modeloHtml.options.length] = new Option(selectVehiculo.modelo[x].value, selectVehiculo.modelo[x].key);
-      }
-    }
-  }
-};*/
