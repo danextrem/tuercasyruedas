@@ -78,7 +78,28 @@ body {
 
 /* Formulario */
 .search-container {
-    background-color: aquamarine;
+    background-color: var(--color-100);
+    border-radius: 1rem;
+    display: flex;    
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    
+}
+.search-container > div{    
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;   
+}
+
+.search-container > div > label{    
+    display: none;
+}
+
+
+fieldset {
+    border-color: unset;
+    border: unset;
 }
 
 
@@ -140,8 +161,7 @@ body {
     }
 
     /* Formulario */
-    .search-container {
-        background-color: aquamarine;
+    .search-container {        
         max-width: 720px;
         margin-left: auto;
         margin-right: auto;
@@ -155,8 +175,7 @@ body {
         max-width: 960px;
     }
 
-    .search-container {
-        background-color: aquamarine;
+    .search-container {        
         max-width: 960px;
         margin-left: auto;
         margin-right: auto;
@@ -169,8 +188,7 @@ body {
         max-width: 1320px;
     }
 
-    .search-container {
-        background-color: aquamarine;
+    .search-container {        
         max-width: 1320px;
         margin-left: auto;
         margin-right: auto;

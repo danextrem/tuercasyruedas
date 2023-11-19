@@ -17,7 +17,7 @@ const dataVehiculos =
     "marca": [
       {
         "key": "toyota",
-        "value": "Toyota",
+        "value": "Toyota",        
         "categoria": [
           "camioneta-suv",
           "sedan",
@@ -37,22 +37,20 @@ const dataVehiculos =
       {
         "key": "yaris-hb",
         "value": "Yaris Hatchback",
-        "marca": [
-          "toyota"
-        ],
-        "categoria": [
-          "hatchback"
-        ]
+        "marca": "toyota",
+        "categoria": "hatchback"
+      },
+      {
+        "key": "agya",
+        "value": "Agya",
+        "marca": "toyota",
+        "categoria": "sedan"
       },
       {
         "key": "x-trail",
         "value": "X-Trail",
-        "marca": [
-          "nissan"
-        ],
-        "categoria": [
-          "camioneta-suv"
-        ]
+        "marca": "nissan",
+        "categoria": "camioneta-suv"
       }
     ]
   };
