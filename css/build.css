@@ -75,10 +75,15 @@ body {
     line-height: 1.5;
     cursor: pointer;
 }
-
 /* Formulario */
-.search-container {
-    background-color: var(--color-100);
+legend {
+    background-color: var(--color-400);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--color-300);
+}
+.search-container {    
+    background-color: var(--color-400);
     border-radius: 1rem;
     display: flex;    
     flex-wrap: wrap;
@@ -91,11 +96,6 @@ body {
     flex-direction: column;
     width: 50%;   
 }
-
-.search-container > div > label{    
-    display: none;
-}
-
 
 fieldset {
     border-color: unset;
