@@ -103,11 +103,6 @@ fieldset {
 }
 
 
-
-
-
-
-
 /*Reponsibe*/
 @media screen and (min-width: 768px){ 
     .header-principal {
@@ -124,9 +119,6 @@ fieldset {
         flex-wrap: unset;
     }
 
-    .header-principal > input, .header-principal > label {
-        display: none;
-    }
 
     .desplega-menu {    
         position: relative;        
