@@ -86,26 +86,26 @@ body {
 /* Formulario */
 legend {
     background-color: var(--color-100);
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     color: var(--color-200);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .search-container {
-    background-color: var(--color-100);
-    border-radius: 1rem;
+    background-color: var(--color-100);    
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem 0 0 0;
-    gap: 0.2rem;
+    margin: 1rem 0 0 0;    
+    padding-inline: 0px;
+    justify-content: space-evenly;
 }
 
-.search-container>div {
-    border-radius: 5px;
+.search-container>div {    
     display: flex;
     flex-direction: column;
-    width: 49.5%;
+    width: 48%;
+    padding: 2px 0px;
 }
 
 .search-container>div>select {
@@ -127,6 +127,7 @@ select:focus {
 .select-two-colum {
     display: flex !important;
     flex-direction: row !important;
+    gap: 0.2rem;
 }
 
 .select-two-colum > select {
@@ -201,7 +202,7 @@ fieldset {
     }
 
     .search-container>div {
-        width: 33%;
+        width: 32.5%;
     }
 
 
