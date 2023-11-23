@@ -114,9 +114,7 @@ legend {
     border-radius: 0.5rem;
     padding: 0.5rem;
     cursor: pointer;
-    appearance: none;
-    text-indent: 1px;
-    font-size: 1.1rem;
+    appearance: none;    
     color: var(--color-100);
 }
 
