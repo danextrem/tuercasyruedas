@@ -86,6 +86,10 @@ window.onload = async function () {
             for (const { key, value } of filteredMarcas) {
                 marcaHtml.options[marcaHtml.options.length] = new Option(value, key);
             }
+            const filteredModelos = dataVehiculos.modelo.filter(modelo => modelo.categoria.includes(selectedCategoria));
+            for (const { key, value } of filteredModelos) {
+              modeloHtml.options[modeloHtml.options.length] = new Option(value, key);
+            }
         }
     });
 /**

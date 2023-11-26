@@ -5,6 +5,7 @@
     --color-200: white;
     --color-300: black;
     --color-400: orange;
+    --color-500: red;
 
 
 
@@ -84,61 +85,44 @@ body {
 }
 
 /* Formulario */
-legend {
-    background-color: var(--color-100);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    color: var(--color-200);
-    font-size: 1.2rem;
-}
-
 .search-container {
-    background-color: var(--color-100);    
+    /*background-color: var(--color-200);    */
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem 0 0 0;    
-    padding-inline: 0px;
+    margin: 1rem 0 0 0;        
     justify-content: space-evenly;
+    border-radius: 0.5rem;    
 }
 
 .search-container>div {    
     display: flex;
     flex-direction: column;
-    width: 48%;
-    padding: 2px 0px;
+    width: 100%;
+    padding: 5px 5px;
 }
 
 .search-container>div>select {
-    background: var(--color-110);
-    border: 2px solid var(--color-120);
+    background: var(--color-200);
+    border: 1px solid var(--color-100);
     border-radius: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.8rem;
     cursor: pointer;
     appearance: none;    
     color: var(--color-100);
 }
 
-.search-container>div>select:hover,
-select:focus {
+.search-container>div>select:hover, select:focus {
     border-color: var(--color-400);
     outline: none;
 }
 
-.select-two-colum {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 0.2rem;
+.btn-buscar {
+    padding: 10px;
+    background-color: var(--color-500);
+    border-radius: 0.5rem;
+    text-align: center;
 }
 
-.select-two-colum > select {
-    width: 50%;
-}
-
-
-fieldset {
-    border-color: unset;
-    border: unset;
-}
 
 
 /*Reponsibe*/
@@ -176,10 +160,6 @@ fieldset {
         border-left: none;
     }
 
-    .open-menu:checked+.desplega-menu {
-        width: unset;
-    }
-
     .btn-destacado {
         background-color: var(--color-400);
         padding: 0;
@@ -201,9 +181,9 @@ fieldset {
         margin-right: auto;
     }
 
-    .search-container>div {
-        width: 32.5%;
-    }
+    
+
+    
 
 
 }
@@ -218,6 +198,10 @@ fieldset {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .search-container>div {
+        width: 20%;
+    }
 }
 
 
@@ -231,4 +215,6 @@ fieldset {
         margin-left: auto;
         margin-right: auto;
     }
+
+    
 }
