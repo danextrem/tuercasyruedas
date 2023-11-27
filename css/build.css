@@ -101,7 +101,7 @@ body {
 
 .search-container>div>select {
     background: var(--color-200);
-    border: 1px solid var(--color-100);
+    border: 1px solid var(--color-120);
     border-radius: 0.3rem;
     padding: 0.8rem;
     cursor: pointer;
@@ -178,12 +178,6 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-
-    
-
-    
-
-
 }
 
 @media screen and (min-width: 992px) {
@@ -198,7 +192,7 @@ body {
     }
 
     .search-container>div {
-        width: 20%;
+        width: 18.9%;
     }
 }
 
