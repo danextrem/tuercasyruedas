@@ -5,17 +5,17 @@
     --color-200: white;
     --color-300: black;
     --color-400: orange;
-
-
-
 }
 
-ul,
-li,
-a {
+ul, li, a{
     text-decoration: none;
     color: var(--color-200);
     list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1, h2{    
     margin: 0px;
     padding: 0px;
 }
@@ -121,6 +121,39 @@ body {
     text-align: center;
 }
 
+/* Avisos destacados */
+.carrusel{
+    /*aspect-ratio: 10/16;*/
+    width: 100%;
+    position: relative;
+    display: flex;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.carrusel>article{
+    /*flex: 1 0 auto;    */
+    width: 100%;
+    left: 0;    
+    /*position: sticky;*/
+    object-fit: cover;
+    scroll-snap-align: center;
+}
+
+.carrusel>img{
+    width: 100%;
+    height: auto;            
+}
+
+.carrusel>article>h1{
+    font-size: 1rem;
+}
+.carrusel>article>h2{
+    font-size: 0.8rem;
+}
+
+
+
 
 
 /*Reponsibe*/
@@ -172,12 +205,14 @@ body {
         cursor: pointer;
     }
 
-    /* Formulario */
-    .search-container {
+    /* Formulario - Reponsibe*/
+    .search-container, .section-container {
         max-width: 720px;
         margin-left: auto;
         margin-right: auto;
     }
+
+
 }
 
 @media screen and (min-width: 992px) {
@@ -185,15 +220,13 @@ body {
         max-width: 960px;
     }
 
-    .search-container {
+    .search-container, .section-container {
         max-width: 960px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .search-container>div {
         width: 18.9%;
-    }
+    }   
 }
 
 
@@ -202,10 +235,8 @@ body {
         max-width: 1320px;
     }
 
-    .search-container {
-        max-width: 1320px;
-        margin-left: auto;
-        margin-right: auto;
+    .search-container, .section-container {
+        max-width: 1320px;     
     }
 
     
