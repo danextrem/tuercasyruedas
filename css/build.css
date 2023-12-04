@@ -123,37 +123,30 @@ body {
 
 /* Avisos destacados */
 .carrusel{
-    /*aspect-ratio: 10/16;*/
     width: 100%;
-    position: relative;
     display: flex;
-    overflow: scroll;
+    overflow: hidden;
+    white-space: nowrap;
+    counter-reset: item;
+    scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
 }
 
-.carrusel>article{
-    /*flex: 1 0 auto;    */
-    width: 100%;
-    left: 0;    
-    /*position: sticky;*/
-    object-fit: cover;
-    scroll-snap-align: center;
+.carrusel > article{
+    width: 300px;
+    background: var(--color-200);    
+    box-shadow: 0 0 5px rgba(0,0,0,.6);
+    margin: 5px;
 }
 
-.carrusel>img{
-    width: 100%;
-    height: auto;            
+.carrusel > article > h2{
+    text-overflow: ellipsis;
+    overflow: hidden;    
 }
 
-.carrusel>article>h1{
-    font-size: 1rem;
+.carrusel > article > img{
+    width: 100%;    
 }
-.carrusel>article>h2{
-    font-size: 0.8rem;
-}
-
-
-
 
 
 /*Reponsibe*/
