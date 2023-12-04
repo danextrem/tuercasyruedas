@@ -125,7 +125,7 @@ body {
 .carrusel{
     width: 100%;
     display: flex;
-    overflow: hidden;
+    overflow: scroll;    
     white-space: nowrap;
     counter-reset: item;
     scroll-behavior: smooth;
@@ -137,12 +137,25 @@ body {
     background: var(--color-200);    
     box-shadow: 0 0 5px rgba(0,0,0,.6);
     margin: 5px;
+    flex-shrink: 0;
 }
 
-.carrusel > article > h2{
-    text-overflow: ellipsis;
-    overflow: hidden;    
+.carrusel > article > div{ 
+    padding: 10px;    
 }
+
+.card-container > h1 { 
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-container > h2 { 
+    font-size: 10px;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+
 
 .carrusel > article > img{
     width: 100%;    
