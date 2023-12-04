@@ -15,7 +15,7 @@ ul, li, a{
     padding: 0px;
 }
 
-h1, h2{    
+h1, h2, h3{    
     margin: 0px;
     padding: 0px;
 }
@@ -132,33 +132,50 @@ body {
     scroll-snap-type: x mandatory;
 }
 
-.carrusel > article{
+.card-container {
     width: 300px;
     background: var(--color-200);    
     box-shadow: 0 0 5px rgba(0,0,0,.6);
     margin: 5px;
     flex-shrink: 0;
+    border-radius: 0.5rem;
+    
 }
-
-.carrusel > article > div{ 
-    padding: 10px;    
-}
-
 .card-container > h1 { 
     font-size: 18px;
     font-weight: 500;
+    padding: 0 10px;
 }
 
 .card-container > h2 { 
     font-size: 14px;
     font-weight: 400;
     overflow: hidden;
+    padding: 0 10px;
+}
+
+.card-container > h3 { 
+    font-size: 24px;
+    font-weight: 600;
+    overflow: hidden;
+    padding: 0 10px;
+    color: var(--color-100);
+}
+
+.card-container > span { 
+    display: flex;
+    background-color: var(--color-100);
+    padding: 5px 10px;
+    color: var(--color-200);
+    border-radius: 0 0 0.5rem 0.5rem;
 }
 
 
 
-.carrusel > article > img{
-    width: 100%;    
+.carrusel > article > div > img{
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+
 }
 
 
