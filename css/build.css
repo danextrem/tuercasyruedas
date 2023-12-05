@@ -4,7 +4,9 @@
     --color-120: #aec2dd;
     --color-200: white;
     --color-300: black;
+    --color-370: #464646;
     --color-400: orange;
+    --color-500: red;
 }
 
 ul, li, a{
@@ -135,7 +137,7 @@ body {
 .card-container {
     width: 300px;
     background: var(--color-200);    
-    box-shadow: 0 0 5px rgba(0,0,0,.6);
+    box-shadow: 0 0 5px  0 0 5px var(--color-120);
     margin: 5px;
     flex-shrink: 0;
     border-radius: 0.5rem;
@@ -143,8 +145,9 @@ body {
 }
 .card-container > h1 { 
     font-size: 18px;
-    font-weight: 500;
-    padding: 0 10px;
+    font-weight: 600;
+    padding: 5px 10px;
+    color: var(--color-370);
 }
 
 .card-container > h2 { 
@@ -152,23 +155,25 @@ body {
     font-weight: 400;
     overflow: hidden;
     padding: 0 10px;
+    color: var(--color-370);
 }
 
 .card-container > h3 { 
     font-size: 24px;
     font-weight: 600;
     overflow: hidden;
-    padding: 0 10px;
-    color: var(--color-100);
+    padding: 5px 10px;
+    color: var(--color-500);
 }
 
 .card-container > span { 
-    display: flex;
-    background-color: var(--color-100);
-    padding: 5px 10px;
-    color: var(--color-200);
+    display: flex;    
+    padding: 5px 10px;    
     border-radius: 0 0 0.5rem 0.5rem;
     font-size: 14px;
+    border-top: 2px solid var(--color-110);
+    gap: 10px;
+    color: var(--color-370);
 }
 
 .img-container > img{    
