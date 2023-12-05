@@ -127,7 +127,8 @@ body {
 .carrusel{
     width: 100%;
     display: flex;
-    overflow: scroll;    
+    overflow-x: scroll;    
+    overflow-y: hidden;    
     white-space: nowrap;
     counter-reset: item;
     scroll-behavior: smooth;
@@ -137,7 +138,7 @@ body {
 .card-container {
     width: 300px;
     background: var(--color-200);    
-    box-shadow: 0 0 5px  0 0 5px var(--color-120);
+    box-shadow: 0px 0px 5px var(--color-120);
     margin: 5px;
     flex-shrink: 0;
     border-radius: 0.5rem;
