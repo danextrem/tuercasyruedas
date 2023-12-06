@@ -3,16 +3,18 @@
     --color-110: #e6ecf4;
     --color-120: #aec2dd;
     --color-200: white;
-    --color-300: black;    
+    --color-300: black;
     --color-370: #464646;
     --color-350: #7f7f7f;
     --color-400: orange;
     --color-500: red;
 
-    
+
 }
 
-ul, li, a{
+ul,
+li,
+a {
     text-decoration: none;
     color: var(--color-200);
     list-style: none;
@@ -20,7 +22,9 @@ ul, li, a{
     padding: 0px;
 }
 
-h1, h2, h3{    
+h1,
+h2,
+h3 {
     margin: 0px;
     padding: 0px;
 }
@@ -89,15 +93,15 @@ body {
 }
 
 /* Formulario */
-.search-container {    
+.search-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem 0 0 0;        
+    margin: 1rem 0 0 0;
     justify-content: space-evenly;
-    border-radius: 0.5rem;    
+    border-radius: 0.5rem;
 }
 
-.search-container>div {    
+.search-container>div {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -110,11 +114,12 @@ body {
     border-radius: 0.3rem;
     padding: 0.8rem;
     cursor: pointer;
-    appearance: none;    
+    appearance: none;
     color: var(--color-100);
 }
 
-.search-container>div>select:hover, select:focus {
+.search-container>div>select:hover,
+select:focus {
     border-color: var(--color-400);
     outline: none;
 }
@@ -127,34 +132,30 @@ body {
 }
 
 /* Avisos destacados */
-.carrusel{
+.carrusel {
     width: 100%;
     display: flex;
-    overflow-x: scroll;    
-    overflow-y: hidden;    
-    white-space: nowrap;
-    counter-reset: item;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 0px 10px;
 }
 
 .card-container {
     width: 300px;
-    background: var(--color-200);    
-    box-shadow: 0px 0px 5px var(--color-120);
-    margin: 5px;
+    background: var(--color-200);
+    box-shadow: 0px 0px 5px var(--color-120);    
     flex-shrink: 0;
-    border-radius: 0.5rem;    
+    border-radius: 0.5rem;
 }
 
-.card-container > h1 { 
+.card-container>h1 {
     font-size: 18px;
     font-weight: 600;
     padding: 5px 10px;
     color: var(--color-370);
 }
 
-.card-container > h2 { 
+.card-container>h2 {
     font-size: 14px;
     font-weight: 400;
     overflow: hidden;
@@ -162,7 +163,7 @@ body {
     color: var(--color-370);
 }
 
-.card-container > h3 { 
+.card-container>h3 {
     font-size: 24px;
     font-weight: 600;
     overflow: hidden;
@@ -170,9 +171,9 @@ body {
     color: var(--color-500);
 }
 
-.card-container > span { 
-    display: flex;    
-    padding: 5px 10px;    
+.card-container>span {
+    display: flex;
+    padding: 5px 10px;
     border-radius: 0 0 0.5rem 0.5rem;
     font-size: 14px;
     border-top: 2px solid var(--color-110);
@@ -181,9 +182,9 @@ body {
     font-weight: 600;
 }
 
-.img-container > img{    
+.img-container>img {
     width: 300px;
-    height: 200px;    
+    height: 200px;
     object-fit: contain;
     border-radius: 0.5rem 0.5rem 0 0;
     background-color: var(--color-300);
@@ -240,18 +241,26 @@ body {
     }
 
     /* Formulario - Reponsibe 768px*/
-    .search-container, .section-container {
+    .search-container,
+    .section-container {
         max-width: 720px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* Avisos destacados - Reponsibe 768px */
-    .carrusel{
-        overflow: hidden;            
+    .search-container>div {
+        width: 48%;
     }
 
-
+    /* Avisos destacados - Reponsibe 768px */
+    .carrusel {
+        display: flex;
+        overflow: hidden;
+        white-space: initial;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 10px;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -259,13 +268,18 @@ body {
         max-width: 960px;
     }
 
-    .search-container, .section-container {
+    .search-container,
+    .section-container {
         max-width: 960px;
     }
 
     .search-container>div {
         width: 18.9%;
-    }   
+    }
+
+    .carrusel {
+        justify-content: flex-start;        
+    }
 }
 
 
@@ -274,9 +288,10 @@ body {
         max-width: 1320px;
     }
 
-    .search-container, .section-container {
-        max-width: 1320px;     
+    .search-container,
+    .section-container {
+        max-width: 1320px;
     }
 
-    
+
 }

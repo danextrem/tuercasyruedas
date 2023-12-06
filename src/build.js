@@ -127,3 +127,6 @@ function fillDropDownOptions(optionsData, dropDownElement) {
 function clearDropDownOptions(dropDownElement, name) {
     dropDownElement.innerHTML = '<option value="" selected>'+ name +'</option>';
 }
+
+
+
