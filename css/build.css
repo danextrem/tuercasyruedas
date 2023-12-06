@@ -3,10 +3,13 @@
     --color-110: #e6ecf4;
     --color-120: #aec2dd;
     --color-200: white;
-    --color-300: black;
+    --color-300: black;    
     --color-370: #464646;
+    --color-350: #7f7f7f;
     --color-400: orange;
     --color-500: red;
+
+    
 }
 
 ul, li, a{
@@ -141,9 +144,9 @@ body {
     box-shadow: 0px 0px 5px var(--color-120);
     margin: 5px;
     flex-shrink: 0;
-    border-radius: 0.5rem;
-    
+    border-radius: 0.5rem;    
 }
+
 .card-container > h1 { 
     font-size: 18px;
     font-weight: 600;
@@ -174,7 +177,8 @@ body {
     font-size: 14px;
     border-top: 2px solid var(--color-110);
     gap: 10px;
-    color: var(--color-370);
+    color: var(--color-350);
+    font-weight: 600;
 }
 
 .img-container > img{    
@@ -186,7 +190,7 @@ body {
 }
 
 
-/*Reponsibe*/
+/*Reponsibe 768px */
 @media screen and (min-width: 768px) {
     .header-principal {
         max-width: 720px;
@@ -235,11 +239,16 @@ body {
         cursor: pointer;
     }
 
-    /* Formulario - Reponsibe*/
+    /* Formulario - Reponsibe 768px*/
     .search-container, .section-container {
         max-width: 720px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* Avisos destacados - Reponsibe 768px */
+    .carrusel{
+        overflow: hidden;            
     }
 
 
