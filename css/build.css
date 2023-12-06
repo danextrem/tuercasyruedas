@@ -4,8 +4,7 @@
     --color-120: #aec2dd;
     --color-200: white;
     --color-300: black;
-    --color-370: #464646;
-    --color-350: #7f7f7f;
+    --color-370: #464646;    
     --color-400: orange;
     --color-500: red;
 
@@ -178,7 +177,7 @@ select:focus {
     font-size: 14px;
     border-top: 2px solid var(--color-110);
     gap: 10px;
-    color: var(--color-350);
+    color: var(--color-370);
     font-weight: 600;
 }
 
