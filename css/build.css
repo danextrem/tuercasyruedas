@@ -39,6 +39,7 @@ body {
 .wrapper {
     background-color: var(--color-100);
     height: 60px;
+    width: 100%;
 }
 
 .header-principal {
@@ -189,14 +190,28 @@ select:focus {
     background-color: var(--color-300);
 }
 
+/* Footer */
+.footer{
+    margin-top: 50px;    
+    bottom: 0px;    
+}
+
+.footer > footer{
+    color: var(--color-110);
+    padding-top: 1rem;
+}
+
 
 /*Reponsibe 768px */
 @media screen and (min-width: 768px) {
-    .header-principal {
-        max-width: 720px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    .wrapper>header,
+        .search-container,
+        .section-container,
+        .footer>footer {
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
     .header-principal {
         position: relative;
@@ -258,17 +273,18 @@ select:focus {
         white-space: initial;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px 10px;
+        gap: 1rem 5rem;
+    }
+
+    .footer > footer{
+        display: flex;
+        justify-content: space-between;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .wrapper>header {
-        max-width: 960px;
-    }
-
-    .search-container,
-    .section-container {
+    .wrapper > header, .search-container,
+    .section-container, .footer > footer {
         max-width: 960px;
     }
 
@@ -277,20 +293,19 @@ select:focus {
     }
 
     .carrusel {
-        justify-content: flex-start;        
+        justify-content: flex-start;   
+        gap: 1rem 1rem;     
     }
 }
 
 
 @media screen and (min-width: 1400px) {
-    .wrapper>header {
+    .wrapper > header, .search-container,
+    .section-container, .footer > footer {
         max-width: 1320px;
     }
 
-    .search-container,
-    .section-container {
-        max-width: 1320px;
+    .carrusel {        
+        gap: 1rem 2rem;     
     }
-
-
 }
