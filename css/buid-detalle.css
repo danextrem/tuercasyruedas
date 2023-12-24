@@ -1,8 +1,7 @@
 :root {
     --bg-body-color: #ededed;
-    --bg-primary-color: #ff4500;
-    --bg-wrapper-color: #0c2941;
-    --bg-wrapper-light-color: #4f6475;
+    --bg-primary-color: orange;
+    --bg-wrapper-color: #0c2941;    
     --height-header: 60px;
 }
 
@@ -12,9 +11,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;    
-}
-.display-none{
-    display: none;
 }
 .wrapper {
     background-color: var(--bg-wrapper-color);    
@@ -38,31 +34,89 @@ body{
     cursor: pointer;
 }
 
-.nav-menu{    
-    display: none;    
-}
-
-.nav-menu-show{    
+.nav-menu{        
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;    
     position: fixed;
-    left: 0;
-    top: 60px;
-    width: 100%;
-    height: calc(100% - var(--height-header));
+    align-items: center;
     overflow-y: auto;
     justify-content: flex-end;
-    background-color: var(--bg-wrapper-color);
+    left: 100%;    
+    width: 100%;
+    top: var(--height-header); 
+    height: calc(100% - var(--height-header));
     border-top: 2px solid var(--bg-primary-color);
+    background-color: var(--bg-wrapper-color);
+    transition: all 0.3s;
 }
 
-.nav-menu-show > a {    
+.nav-menu-show{   
+    left: 0;    
+}
+.nav-menu > a {    
     color: white;
     padding: 10px 100%;
     text-decoration: none;    
-    width: max-content;    
+    width: max-content;
 }
+
+/*** Main ***/
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+figure{    
+    margin: 0px;
+    margin-inline-start: 0px;
+    margin-block: 0px;    
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Slider Vehiculo */
+.slider-container {    
+    display: flex;    
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: red;    
+}
+
+.slider > img {   
+    width: 100%;
+    height: 100%; 
+    object-fit: contain;
+}
+
+/*.slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 200px;
+    background-color: #3498db;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 8px;
+    transition: transform 0.5s ease-in-out;
+}
+*/
+
+
+
+
+
 /* Footer */
 .footer{
     position: relative;
@@ -74,8 +128,8 @@ body{
 
 /*Reponsibe 768px */
 @media screen and (min-width: 768px) {
-    .wrapper>header,
-    .footer>footer {
+    .nav-header,
+    .footer>footer, main {
         max-width: 720px;
         margin-left: auto;
         margin-right: auto;
@@ -83,25 +137,33 @@ body{
     .nav-header>button {
         display: none;
     }
-    .nav-menu{    
-        display: flex;
+    .nav-menu{            
+        height: initial;
+        flex-direction: initial;
+        position: initial;
+        width: initial;
+        border: initial;
     }
-    .nav-menu > a {  
-        font-size: 1rem;  
-        padding: 0 10px;
-        color: white;        
-        text-decoration: none;    
+    .nav-menu > a {          
+        padding: 0 10px;                
         width: max-content; 
         line-height: var(--height-header);  
     }
     .nav-menu > a:hover {  
         background-color: var(--bg-primary-color);
-    }    
+    }  
+    /*** Main ***/
+    .slider-container {        
+        height: 450px;        
+    }
+
+    /* Slider Vehiculo */
+    
 }
 
 /*Reponsibe 992px */
 @media screen and (min-width: 992px) {
-    .wrapper>header,
+    .nav-header, main,
     .footer>footer {
         max-width: 960px;
     }
@@ -109,7 +171,7 @@ body{
 
 /*Reponsibe 1400px */
 @media screen and (min-width: 1400px) {
-    .wrapper>header,
+    .nav-header, main,
     .footer>footer {
         max-width: 1320px;
     }
