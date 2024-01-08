@@ -5,6 +5,19 @@
     --height-header: 60px;
 }
 
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+h1, h2{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background-color: var(--bg-body-color);
     font-family: Arial, sans-serif;
@@ -83,13 +96,19 @@ main{
     width: 100%;
     height: 300px;
     overflow: hidden;
-    background-color: red;    
+    margin-top: 0.5rem;
+    background-color: white;    
 }
 
 .slider > img {   
     width: 100%;
     height: 100%; 
     object-fit: contain;
+}
+
+.datos-generales{
+    background: white;
+    margin-top: 1rem;
 }
 
 /*.slider {
@@ -127,7 +146,21 @@ main{
 
 
 /*Reponsibe 768px */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) { 
+    
+    
+    .titulo{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: red;
+    }
+
+    .precio{
+        display: flex;
+    }
+
+
+
     .nav-header,
     .footer>footer, main {
         max-width: 720px;
@@ -154,7 +187,10 @@ main{
     }  
     /*** Main ***/
     .slider-container {        
-        height: 450px;        
+        height: 450px;  
+        border-radius: 1rem;
+        margin-top: 0.5rem;
+        
     }
 
     /* Slider Vehiculo */
