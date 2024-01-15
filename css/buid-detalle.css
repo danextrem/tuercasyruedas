@@ -1,8 +1,10 @@
 :root {
     --bg-body-color: #ededed;
     --bg-primary-color: orange;
-    --bg-wrapper-color: #0c2941;    
+    --bg-wrapper-color: #0c2941;
+    --bg-black-secundary: #4d4d4d;
     --height-header: 60px;
+
 }
 
 h1{
@@ -10,7 +12,7 @@ h1{
 }
 
 h2{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 h1, h2{
@@ -18,8 +20,7 @@ h1, h2{
     padding: 0;
 }
 
-body{
-    background-color: var(--bg-body-color);
+body{    
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -97,7 +98,7 @@ main{
     height: 300px;
     overflow: hidden;
     margin-top: 0.5rem;
-    background-color: white;    
+    /*background-color: white;    */
 }
 
 .slider > img {   
@@ -107,9 +108,56 @@ main{
 }
 
 .datos-generales{
-    background: white;
-    margin-top: 1rem;
+    display: grid;
+    margin-top: 0.5rem;
+    padding: 0.5rem; 
 }
+
+.info-vehiculo > h1{
+    font-weight: bold;
+    color: var(--bg-black-secundary)
+}
+.info-precio{
+    color: red;
+}
+
+
+.info-precio span:nth-child(1){
+    font-size: 1.2rem;
+    font-weight: bold;    
+}
+
+.info-precio span:nth-child(2){
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.info{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 2rem 0 0.5rem;    
+}
+
+/* Info Caracteristicas*/
+.info-caracteristica {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;    
+}
+
+.info-caracteristica > div div:nth-child(1){
+    font-size: 0.75rem;
+    color: var(--bg-black-secundary);
+    padding: 0.5rem 0;
+}
+
+.info-caracteristica > div div:nth-child(2){
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
 
 /*.slider {
     display: grid;
@@ -147,20 +195,6 @@ main{
 
 /*Reponsibe 768px */
 @media screen and (min-width: 768px) { 
-    
-    
-    .titulo{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background-color: red;
-    }
-
-    .precio{
-        display: flex;
-    }
-
-
-
     .nav-header,
     .footer>footer, main {
         max-width: 720px;
@@ -187,18 +221,26 @@ main{
     }  
     /*** Main ***/
     .slider-container {        
-        height: 450px;  
-        border-radius: 1rem;
+        height: 450px;          
+        border-radius: 1rem 1rem 0 0;
         margin-top: 0.5rem;
         
     }
 
-    /* Slider Vehiculo */
+    .info-caracteristica {        
+        grid-template-columns: 1fr 1fr 1fr;        
+    }
+    
     
 }
 
 /*Reponsibe 992px */
 @media screen and (min-width: 992px) {
+    .datos-generales{    
+        grid-template-columns: 2fr 1fr;   
+        gap: 10px;
+    }
+
     .nav-header, main,
     .footer>footer {
         max-width: 960px;
@@ -207,6 +249,11 @@ main{
 
 /*Reponsibe 1400px */
 @media screen and (min-width: 1400px) {
+    .info-caracteristica {        
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+
     .nav-header, main,
     .footer>footer {
         max-width: 1320px;
