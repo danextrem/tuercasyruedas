@@ -1,7 +1,7 @@
 :root {
     --bg-body-color: #ededed;
     --bg-primary-color: orange;
-    --bg-wrapper-color: #0c2941;
+    --bg-wrapper-color: #00325c;
     --bg-black-secundary: #4d4d4d;
     --height-header: 60px;
 
@@ -97,8 +97,7 @@ main{
     width: 100%;
     height: 300px;
     overflow: hidden;
-    margin-top: 0.5rem;
-    /*background-color: white;    */
+    margin-top: 0.5rem;    
 }
 
 .slider > img {   
@@ -107,15 +106,25 @@ main{
     object-fit: contain;
 }
 
+.info-direccion{
+    display: inline-flex;
+    padding: 5px;
+    background-color: var(--bg-primary-color);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    color: var(--bg-wrapper-color);
+    font-size: 0.75rem;    
+}
+
 .datos-generales{
     display: grid;
     margin-top: 0.5rem;
-    padding: 0.5rem; 
+    
 }
 
 .info-vehiculo > h1{
     font-weight: bold;
-    color: var(--bg-black-secundary)
+    color: var(--bg-wrapper-color);
 }
 .info-precio{
     color: red;
@@ -135,7 +144,9 @@ main{
 .info{
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 2rem 0 0.5rem;    
+    padding: 4rem 0 0;    
+    border-bottom: 4px solid var(--bg-primary-color);
+    color: var(--bg-wrapper-color);
 }
 
 /* Info Caracteristicas*/
@@ -154,6 +165,38 @@ main{
 .info-caracteristica > div div:nth-child(2){
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+.info-vendedor{    
+    display: flex;
+    padding-top: 1rem;
+}
+
+.info-vendedor-logo {    
+    width: 85px;
+    height: 55px;
+}
+
+.info-vendedor-logo img {   
+    width: 100%;
+    height: 100%;    
+    object-fit: contain;
+}
+
+.info-vendedor-titulo div:nth-child(1){
+    font-size: 1.2rem;
+    font-weight: bold; 
+}
+
+.info-vendedor-titulo div:nth-child(2){    
+    font-size: 0.75rem;
+    color: var(--bg-black-secundary);
+    padding: 0.2rem 0; 
+}
+
+.info-video > iframe{
+    width: 100%;
+    height: 315px;        
 }
 
 
@@ -229,6 +272,12 @@ main{
 
     .info-caracteristica {        
         grid-template-columns: 1fr 1fr 1fr;        
+    }
+
+    .info-video > iframe{
+        width: 100%;
+        height: 415px;    
+        object-fit: contain;
     }
     
     
