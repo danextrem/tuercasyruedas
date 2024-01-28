@@ -1,7 +1,7 @@
 :root {
     --bg-body-color: #ededed;
     --bg-primary-color: orange;
-    --bg-wrapper-color: #00325c;
+    --bg-wrapper-color: #084298;
     --bg-black-secundary: #4d4d4d;
     --height-header: 60px;
 
@@ -167,6 +167,26 @@ main{
     font-weight: bold;
 }
 
+/* Info Contacto*/
+/*.form-contacto div:nth-child(1) {    
+    border-radius: 0.5rem;
+    background-color: #f2f2f2;
+}*/
+
+
+/*.form-contacto > div > div:nth-child(1){
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 0px;    
+    color: white;    
+    background: var(--bg-wrapper-color);
+    text-align: center;
+    border-radius: 0.5rem;
+
+    background-color: #f2f2f2;
+}*/
+
+
 .info-vendedor{    
     display: flex;
     padding-top: 1rem;
@@ -201,14 +221,25 @@ main{
     padding-top: 0.5rem;
 }
 
-.info-video > iframe{
-    width: 100%;
-    height: 315px;        
-}
+/*.form-contacto > div > div:nth-child(1) {
+    background-color: var(--bg-wrapper-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 0.4rem 0.4rem 0 0;
+    font-weight: bold;
+}*/
 
-
-
-
+/*.form-contacto > div > div:nth-child(1) {
+    background-color: var(--bg-wrapper-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 0.4rem 0.4rem 0 0;
+    font-weight: bold;
+}*/
 
 
 /*.slider {
